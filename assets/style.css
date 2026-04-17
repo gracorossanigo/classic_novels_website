@@ -582,6 +582,45 @@ figcaption {
 }
 .nav-btn.primary:hover { opacity: 0.88; }
 
+/* ── CHART TOGGLES ── */
+.chart-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  padding: 0.6rem 0 0.2rem;
+}
+
+.chart-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--mono-font);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.22rem 0.6rem;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.18s, color 0.18s, border-color 0.18s;
+}
+
+.chart-toggle-btn.active {
+  opacity: 1;
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+.toggle-swatch {
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
