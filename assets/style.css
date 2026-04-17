@@ -214,12 +214,22 @@ h1 em {
 .accordion-trigger:hover { background: #181c25; }
 .accordion-trigger.open { background: #181c25; }
 
+.accordion-trigger:hover .article-num,
+.accordion-trigger.open .article-num { color: #93c5fd; }
+
+.accordion-trigger:hover .article-title,
+.accordion-trigger.open .article-title { color: #ffffff; }
+
+.accordion-trigger:hover .article-tag,
+.accordion-trigger.open .article-tag { color: #9ca3af; border-color: #4b5563; }
+
 .article-num {
   font-family: var(--mono-font);
   font-size: 0.7rem;
   color: var(--accent);
   min-width: 28px;
   letter-spacing: 0.06em;
+  transition: color 0.18s;
 }
 
 .article-title {
@@ -239,6 +249,7 @@ h1 em {
   color: var(--muted);
   text-transform: uppercase;
   display: none;
+  transition: color 0.18s, border-color 0.18s;
 }
 @media (min-width: 600px) { .article-tag { display: inline-block; } }
 
@@ -272,6 +283,7 @@ h1 em {
   font-weight: 300;
   line-height: 1.65;
   max-width: 560px;
+  padding-top: 1rem;
 }
 
 .panel-meta {
@@ -569,45 +581,6 @@ figcaption {
   font-weight: 500;
 }
 .nav-btn.primary:hover { opacity: 0.88; }
-
-/* ── CHART TOGGLES ── */
-.chart-toggles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 0.6rem;
-  padding: 0.6rem 0 0.2rem;
-}
-
-.chart-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--mono-font);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 0.22rem 0.6rem;
-  cursor: pointer;
-  opacity: 0.4;
-  transition: opacity 0.18s, color 0.18s, border-color 0.18s;
-}
-
-.chart-toggle-btn.active {
-  opacity: 1;
-  color: var(--text);
-  border-color: var(--muted);
-}
-
-.toggle-swatch {
-  display: inline-block;
-  width: 18px;
-  height: 2px;
-  border-radius: 1px;
-  flex-shrink: 0;
-}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
