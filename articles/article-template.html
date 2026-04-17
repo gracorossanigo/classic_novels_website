@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ↓ Change this to your article title -->
+  <title>Article Title — Classic Novels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<header>
+  <a class="logo" href="../index.html">◈ Classic Novels</a>
+  <a class="back-link" href="../index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    All Articles
+  </a>
+</header>
+
+<main>
+
+  <!-- ======================================================
+       ARTICLE HEADER
+       ====================================================== -->
+
+  <!-- Subcategory label that appears above the title -->
+  <div class="article-eyebrow">Literary Analysis · Ngram Study</div>
+
+  <!-- ↓ Your article / novel title -->
+  <h1>Novel Title</h1>
+
+  <!-- Tags — add or remove <span> elements as needed -->
+  <div class="tags-row">
+    <span class="tag">Literature</span>
+    <span class="tag">Ngram</span>
+    <!-- <span class="tag">Add more tags here</span> -->
+  </div>
+
+  <!-- ======================================================
+       BOOK METADATA CARD
+       Fill in the four fields below.
+       ====================================================== -->
+  <div class="book-card">
+    <div class="book-field">
+      <div class="field-label">Author</div>
+      <div class="field-value">Author Name</div>
+    </div>
+    <div class="book-field">
+      <div class="field-label">Published</div>
+      <div class="field-value">Year</div>
+    </div>
+    <div class="book-field">
+      <div class="field-label">Original Language</div>
+      <div class="field-value">Language</div>
+    </div>
+    <div class="book-field">
+      <div class="field-label">Genre</div>
+      <div class="field-value">Genre · Subgenre</div>
+    </div>
+  </div>
+
+  <!-- Opening paragraph shown in a styled callout box -->
+  <p class="lead">Write a short 1–2 sentence hook here. This appears prominently at the top.</p>
+
+  <hr class="divider" />
+
+
+  <!-- ======================================================
+       CHARTS
+       To add a chart, use a <div> with two attributes:
+
+         data-chart  → the chart type. Options:
+                         "separate"    per-language frequency lines
+                         "aggregate"   single normalized aggregate line
+                         "comparison"  compare multiple novels
+
+         data-src    → path to the JSON file exported from the notebook
+                       (relative to this HTML file)
+
+       Example:
+         <div data-chart="separate" data-src="./data/article-2/my-novel.json"></div>
+
+       Wrap it in a <figure> to add a caption below.
+       ====================================================== -->
+
+  <!-- CHART 1: per-language frequencies -->
+  <figure class="figure">
+    <div data-chart="separate" data-src="./data/FOLDER/FILENAME.json"></div>
+    <figcaption>Fig. 1 — Description of this chart.</figcaption>
+  </figure>
+
+
+  <!-- ======================================================
+       ARTICLE SECTIONS
+       Copy and paste the <div> block below to add more sections.
+       ====================================================== -->
+
+  <div>
+    <h2 class="section-heading">Section Title</h2>
+    <p>Write your section text here.</p>
+
+    <!-- CHART 2: aggregated cross-language index (same JSON as Chart 1) -->
+    <figure class="figure">
+      <div data-chart="aggregate" data-src="./data/FOLDER/FILENAME.json"></div>
+      <figcaption>Fig. 2 — Description of this chart.</figcaption>
+    </figure>
+  </div>
+
+  <hr class="divider" />
+
+  <div>
+    <h2 class="section-heading">Another Section Title</h2>
+    <p>Write your section text here.</p>
+
+    <!-- CHART 3: comparison with other novels -->
+    <figure class="figure">
+      <div data-chart="comparison" data-src="./data/FOLDER/FILENAME-comparison.json"></div>
+      <figcaption>Fig. 3 — Description of this chart.</figcaption>
+    </figure>
+  </div>
+
+  <hr class="divider" />
+
+
+  <!-- ======================================================
+       OPTIONAL COMPONENTS — uncomment to use
+       ====================================================== -->
+
+  <!-- Highlighted callout box:
+  <div class="callout">
+    <div class="callout-icon">📌</div>
+    <p>A key insight or quote you want to highlight.</p>
+  </div>
+  -->
+
+  <!-- Pull quote / blockquote:
+  <blockquote>
+    <p>"The quote goes here."</p>
+    <cite>— Author, Source</cite>
+  </blockquote>
+  -->
+
+
+  <hr class="divider" />
+
+  <!-- ======================================================
+       CONCLUSION
+       ====================================================== -->
+  <div>
+    <h2 class="section-heading">Conclusion</h2>
+    <p>Write your conclusion here.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="nav-footer">
+    <span></span>
+    <a class="nav-btn primary" href="../index.html">↩ Back to all articles</a>
+    <span></span>
+  </div>
+
+</main>
+
+<!-- ↓ Do not remove these — they power the charts -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="../assets/ngram-chart.js"></script>
+</body>
+</html>

@@ -7,329 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #ffffff;
-      --surface: #f5f7fa;
-      --border: #dde1ea;
-      --accent: #1a56db;
-      --accent2: #0ea5e9;
-      --text: #111827;
-      --muted: #6b7280;
-      --heading-font: 'DM Serif Display', Georgia, serif;
-      --body-font: 'DM Sans', sans-serif;
-      --mono-font: 'DM Mono', monospace;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--body-font);
-      font-size: 16px;
-      line-height: 1.75;
-      min-height: 100vh;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      background-size: 200px;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.18;
-    }
-
-    /* ── HEADER ── */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-
-    .logo {
-      font-family: var(--mono-font);
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .back-link {
-      font-family: var(--mono-font);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: var(--text); }
-
-    /* ── MAIN ── */
-    main {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 4rem 2.5rem 6rem;
-      animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── BOOK METADATA CARD ── */
-    .book-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.4rem 1.6rem;
-      margin-bottom: 2.5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.9rem 2rem;
-    }
-
-    @media (max-width: 520px) {
-      .book-card { grid-template-columns: 1fr; }
-    }
-
-
-
-    .field-label {
-      font-family: var(--mono-font);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .field-value {
-      font-size: 0.95rem;
-      color: var(--text);
-      font-weight: 400;
-    }
-
-    /* ── ARTICLE HEADER ── */
-    .article-eyebrow {
-      font-family: var(--mono-font);
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-bottom: 0.7rem;
-    }
-
-    h1 {
-      font-family: var(--heading-font);
-      font-size: clamp(2.4rem, 6vw, 3.8rem);
-      line-height: 1.05;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-family: var(--heading-font);
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-    }
-
-    /* ── TAGS ROW ── */
-    .tags-row {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-
-    .tag {
-      font-family: var(--mono-font);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      padding: 0.2rem 0.6rem;
-      background: rgba(26, 86, 219, 0.08);
-      border: 1px solid rgba(26, 86, 219, 0.25);
-      color: var(--accent);
-      border-radius: 3px;
-      text-transform: uppercase;
-    }
-
-    /* ── LEAD / SUMMARY ── */
-    .lead {
-      font-size: 1.05rem;
-      color: var(--muted);
-      font-weight: 300;
-      border-left: 2px solid var(--accent);
-      padding-left: 1.2rem;
-      margin-bottom: 3rem;
-      line-height: 1.75;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
-
-    /* ── BODY SECTIONS ── */
-    .section-heading {
-      font-family: var(--heading-font);
-      font-size: 1.45rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: #374151;
-      font-weight: 300;
-      margin-bottom: 1.2rem;
-    }
-
-    /* ── PULL QUOTE ── */
-    blockquote {
-      margin: 2rem 0;
-      padding: 1.4rem 1.6rem;
-      background: var(--surface);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 4px 4px 0;
-    }
-
-    blockquote p {
-      font-family: var(--heading-font);
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--text);
-      margin-bottom: 0.6rem;
-      font-weight: 400;
-    }
-
-    blockquote cite {
-      font-family: var(--mono-font);
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      font-style: normal;
-    }
-
-    /* ── HIGHLIGHT CALLOUT ── */
-    .callout {
-      display: flex;
-      gap: 1rem;
-      background: rgba(26, 86, 219, 0.05);
-      border: 1px solid rgba(26, 86, 219, 0.18);
-      border-radius: 5px;
-      padding: 1.1rem 1.3rem;
-      margin: 2rem 0;
-    }
-
-    .callout-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      line-height: 1.75;
-    }
-
-    .callout p {
-      margin-bottom: 0;
-      font-size: 0.92rem;
-      color: #374151;
-    }
-
-    /* ── IMAGE PLACEHOLDER ── */
-    .figure {
-      margin: 2.2rem 0;
-    }
-
-    .figure-placeholder {
-      width: 100%;
-      height: 220px;
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      color: var(--muted);
-    }
-
-    .figure-placeholder svg { opacity: 0.4; }
-
-    .figure-placeholder span {
-      font-family: var(--mono-font);
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-    }
-
-    figcaption {
-      margin-top: 0.7rem;
-      font-family: var(--mono-font);
-      font-size: 0.7rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── NAV FOOTER ── */
-    .nav-footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--mono-font);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 0.5rem 0.9rem;
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .nav-btn:hover { color: var(--text); border-color: var(--muted); }
-
-    .nav-btn.primary {
-      background: var(--accent);
-      color: #ffffff;
-      border-color: var(--accent);
-      font-weight: 500;
-    }
-    .nav-btn.primary:hover { opacity: 0.88; }
-  </style>
+  <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
 
@@ -348,14 +26,7 @@
   <!-- TITLE -->
   <div class="article-eyebrow">Literary Analysis · Ngram Study</div>
   <h1>Don Quixote</h1>
-  
-  <!-- TAGS -->
-  <div class="tags-row">
-    <span class="tag">Literature</span>
-    <span class="tag">Ngram</span>
-    <span class="tag">Spanish</span>
-    <span class="tag">History</span>
-  </div>
+
 
   <!-- BOOK METADATA CARD -->
   <div class="book-card">
@@ -381,20 +52,22 @@
   <p class="lead">It is undeniable that Don Quixote has had an incredible impact on Spanish literature and the literature of the broader Western world. William Faulkner, a 20th century American author and Nobel Laureate, reportedly read the near 1000-page novel every year.</p>
 
   <hr class="divider" />
-   <figure class="figure">
-      <img src="./images/article-1/frequency_per_language.png" width="100%">
-      <figcaption>Fig. 2 — Aggregated Google Books Ngram frequency of "Don Quixote".</figcaption>
-    </figure>
-    </div>
+
+  <!-- GRAPH 1: per-language frequencies -->
+  <figure class="figure">
+    <div data-chart="separate" data-src="./data/article-1/don-quijote.json"></div>
+    <figcaption>Fig. 1 — Google Books Ngram frequency of "Don Quixote" per language corpus (per million words).</figcaption>
+  </figure>
+
   <!-- SECTION 1 -->
   <div>
     <h2 class="section-heading">Reading the Data</h2>
-    <p>The seeming volatility in the popularity of Don Quixote before the year 1750 can be attributed to the unreliability of records and metadata in the Ngram dataset for earlier years. Don Quixote, as expected, appears much more often in the Spanish dataset than in other languages. It also seems to be very relevant in the English corpus, although its popularity in this language’s literary scene seems to have been in a steady decline for the last 300 years.</p>
+    <p>The seeming volatility in the popularity of Don Quixote before the year 1750 can be attributed to the unreliability of records and metadata in the Ngram dataset for earlier years. Don Quixote, as expected, appears much more often in the Spanish dataset than in other languages. It also seems to be very relevant in the English corpus, although its popularity in this language's literary scene seems to have been in a steady decline for the last 300 years.</p>
 
-    <!-- FIGURE PLACEHOLDER — swap src with your actual chart -->
+    <!-- GRAPH 2: aggregated cross-language index -->
     <figure class="figure">
-      <img src="./images/article-1/cross_language_aggregated.png" width="100%">
-      <figcaption>Fig. 2 — Aggregated Google Books Ngram frequency of "Don Quixote".</figcaption>
+      <div data-chart="aggregate" data-src="./data/article-1/don-quijote.json"></div>
+      <figcaption>Fig. 2 — Aggregated cross-language popularity index for "Don Quixote" (normalized).</figcaption>
     </figure>
   </div>
 
@@ -405,7 +78,7 @@
     <h2 class="section-heading">Peaks &amp; Their Historical Causes</h2>
     <p>In general, Don Quixote shows a steady growth in popularity throughout the years, reaching sharp highs in ~1825, ~1905, ~1945, and ~2000. These dates are important.</p>
 
-    <p>The early 1800s were marked by the rise of romantic literature, which completely changed how the novel was interpreted and read. The German Romantics saw it as a sentimental and philosophical exploration of man, a sharp contrast to the previous idea of the novel as a simple satire of chivalric romances. The Schlegel Brothers even called it “the Greatest Romantic Novel.”</p>
+    <p>The early 1800s were marked by the rise of romantic literature, which completely changed how the novel was interpreted and read. The German Romantics saw it as a sentimental and philosophical exploration of man, a sharp contrast to the previous idea of the novel as a simple satire of chivalric romances. The Schlegel Brothers even called it "the Greatest Romantic Novel."</p>
 
     <p>The early 1800s were also marked by turmoil in Europe because of the Napoleonic wars, where Spain was invaded by Napoleon's France and began losing its vast colonies in the west to independence movements.</p>
   </div>
@@ -428,14 +101,14 @@
   <!-- SECTION 4 -->
   <div>
     <h2 class="section-heading">Franco, Civil War &amp; the 400th Anniversary</h2>
-<p>The mid 20th century was marked in Spain by its infamous civil war, and ensuing dictatorship under the hand of Francisco Franco. This was an incredibly painful period for Spanish people, as cities, towns and families were torn apart by the consequences of this bloody civil war. After the fall of the republic, Franco appropriated Don Quixote as fuel for his unique and stringent brand of far right nationalism. The year 2005 marked a milestone for this historic novel, being its 400th anniversary. </p>
+    <p>The mid 20th century was marked in Spain by its infamous civil war, and ensuing dictatorship under the hand of Francisco Franco. This was an incredibly painful period for Spanish people, as cities, towns and families were torn apart by the consequences of this bloody civil war. After the fall of the republic, Franco appropriated Don Quixote as fuel for his unique and stringent brand of far right nationalism.</p>
 
     <p>The year 2005 marked a milestone for this historic novel — its 400th anniversary — corresponding to the sharpest single-year spike visible in the Ngram data around the year 2000.</p>
 
-    <!-- FIGURE PLACEHOLDER -->
+    <!-- GRAPH 3: comparison with other novels -->
     <figure class="figure">
-      <img src="./images/article-1/quixote_comparison.png" width="100%">
-      <figcaption>Fig. 2 — Aggregated Google Books Ngram frequency of "Don Quixote".</figcaption>
+      <div data-chart="comparison" data-src="./data/article-1/don-quijote-comparison.json"></div>
+      <figcaption>Fig. 3 — Don Quixote vs. comparable novels in the English corpus (per million words).</figcaption>
     </figure>
   </div>
 
@@ -444,8 +117,8 @@
   <!-- SECTION 5 -->
   <div>
     <h2 class="section-heading">Conclusion</h2>
-    <p>As we can see, Don Quixote remains to this day as relevant as it has always been, still being more mentioned in English literary discourse today, over 400 years after its publication, than modern classics such as The Great Gatsby, or Pride and Prejudice. </p>
-
+    <p>As we can see, Don Quixote remains to this day as relevant as it has always been, still being more mentioned in English literary discourse today, over 400 years after its publication, than modern classics such as The Great Gatsby, or Pride and Prejudice.</p>
+  </div>
 
   <hr class="divider" />
 
@@ -457,5 +130,8 @@
   </div>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="../assets/ngram-chart.js"></script>
 </body>
 </html>
