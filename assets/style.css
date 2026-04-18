@@ -604,13 +604,18 @@ figcaption {
   padding: 0.22rem 0.6rem;
   cursor: pointer;
   opacity: 0.4;
-  transition: opacity 0.18s, color 0.18s, border-color 0.18s;
+  transition: opacity 0.18s, color 0.18s, border-color 0.18s, background 0.18s;
 }
 
 .chart-toggle-btn.active {
   opacity: 1;
   color: var(--text);
   border-color: var(--muted);
+}
+
+.chart-toggle-btn:hover {
+  border-color: var(--swatch-color, var(--muted));
+  background: color-mix(in srgb, var(--swatch-color, transparent) 15%, transparent);
 }
 
 .toggle-swatch {

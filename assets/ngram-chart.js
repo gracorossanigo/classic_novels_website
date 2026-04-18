@@ -73,12 +73,14 @@
     entries.forEach(({ label, color }) => {
       const btn = document.createElement('button');
       btn.className = 'chart-toggle-btn' + (activeSet.has(label) ? ' active' : '');
+      btn.style.setProperty('--swatch-color', color);
       btn.innerHTML =
         `<span class="toggle-swatch" style="background:${color}"></span>${label}`;
       btn.addEventListener('click', () => {
         const nowActive = btn.classList.toggle('active');
         onToggle(label, nowActive);
       });
+      
       wrap.appendChild(btn);
     });
     container.appendChild(wrap);
