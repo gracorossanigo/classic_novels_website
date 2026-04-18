@@ -45,7 +45,56 @@
 </p>
 </section>
 <section class="section" id="research">
-  <div class="section-label">Articles — 8 entries</div>
+
+
+  <div>
+    <h2 class="section-heading">The Correlation Heatmap</h2>
+    <p>Each cell in the matrix below shows the Pearson correlation between two novels' Ngram frequency trajectories from 1900 to 2019. A value near 1 (blue) means the two books are mentioned together across time; near −0.3 (red) means their mentions diverge. The rows and columns are reordered by Ward hierarchical clustering, so the diagonal blocks reveal which novels move in cultural lockstep.</p>
+    <p>Hover over any cell to see the pair of titles and their exact correlation.</p>
+
+    <figure class="figure">
+      <div data-chart="clustermap" data-src="articles/data/analysis-c/clustermap.json"></div>
+      <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
+    </figure>
+  </div>
+
+  <hr class="divider" />
+
+  <div>
+    <h2 class="section-heading">Top 15 Most Co-Moving Novel Pairs</h2>
+    <p>The pairs below had the highest Pearson correlation in year-by-year Ngram frequency from 1900 to 2019. A high r means both books were mentioned more (and less) at the same moments in history.</p>
+    <figure class="figure">
+      <div data-chart="pairs-table" data-src="articles/data/analysis-c/clustermap.json" data-mode="top"></div>
+      <figcaption>Table 1 — Top 15 most co-moving novel pairs by Pearson r (English Ngram, 1900–2019). Color swatch mirrors the heatmap scale above.</figcaption>
+    </figure>
+    <figure class="figure">
+      <div data-chart="pair-trajectories" data-src="articles/data/analysis-c/pairs_positive.json"></div>
+      <figcaption>Fig. 2 — Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
+    </figure>
+  </div>
+
+  <hr class="divider" />
+
+  <div>
+    <h2 class="section-heading">Top 15 Most Negatively Correlated Novel Pairs</h2>
+    <p>These pairs moved in opposite directions over time — when one was frequently cited, the other tended to recede, suggesting they occupy different cultural moments or audiences.</p>
+    <figure class="figure">
+      <div data-chart="pairs-table" data-src="articles/data/analysis-c/clustermap.json" data-mode="bottom"></div>
+      <figcaption>Table 2 — Top 15 most negatively correlated novel pairs by Pearson r (English Ngram, 1900–2019).</figcaption>
+    </figure>
+    <figure class="figure">
+      <div data-chart="pair-trajectories" data-src="articles/data/analysis-c/pairs_negative.json"></div>
+      <figcaption>Fig. 3 — Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
+    </figure>
+  </div>
+
+  <hr class="divider" />
+
+  
+  <hr class="divider" />
+
+  
+  <div class="section-label">Articles — 9 entries</div>
 
   <ul class="accordion" id="accordion">
 
@@ -198,14 +247,73 @@
       </div>
     </li>
 
-    
+
   </ul>
+
+  <div>
+    <h2 class="section-heading">Cluster 1, Instant Classics</h2>
+
+    <figure class="figure">
+      <div data-chart="cluster-trajectory" data-src="./articles/data/analysis-5/cluster_0.json"></div>
+      <figcaption>Fig. 2 — Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 0.</figcaption>
+    </figure>
+  </div>
+
+  <hr class="divider" />
+
+  <div>
+    <h2 class="section-heading">Cluster 2, First Impression Classics</h2>
+
+    <figure class="figure">
+      <div data-chart="cluster-trajectory" data-src="./articles/data/analysis-5/cluster_2.json"></div>
+      <figcaption>Fig. 3 — Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 2.</figcaption>
+    </figure>
+  </div>
+
+  <hr class="divider" />
+
+  <div>
+    <h2 class="section-heading">Cluster 3, Slow Burners</h2>
+
+    <figure class="figure">
+      <div data-chart="cluster-trajectory" data-src="./articles/data/analysis-5/cluster_3.json"></div>
+      <figcaption>Fig. 4 — Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 3.</figcaption>
+    </figure>
+  </div>
+  <div>
+    <h2 class="section-heading">Are Classic Genres Rising or Falling?</h2>
+
+    <figure class="figure">
+      <div data-chart="genre-lines" data-src="./articles/data/genre/trends.json"></div>
+      <figcaption>Fig. 3 — Normalized Ngram activity (1.0 = each genre's long-run mean), 7-year smoothed, 1900–2019. Values above the dashed baseline indicate above-average cultural citation.</figcaption>
+    </figure>
+  </div>
+
+  <div>
+    <h2 class="section-heading">Genre Lifecycle Curves</h2>
+
+    <figure class="figure">
+      <div data-chart="genre-lines" data-src="./articles/data/genre/lifecycle.json"></div>
+      <figcaption>Fig. 1 — Normalized Ngram frequency (0–1) averaged by genre, plotted against years since publication (English corpus).</figcaption>
+    </figure>
+  </div>
+  <div>
+    <h2 class="section-heading">Genre Lifecycle on Calendar Timeline</h2>
+
+    <figure class="figure">
+      <div data-chart="genre-lines" data-src="./articles/data/genre/lifecycle_calendar.json"></div>
+      <figcaption>Fig. 2 — Raw Ngram frequency averaged by genre on a calendar timeline (1850–2019). Genres are directly comparable since no within-genre normalization is applied.</figcaption>
+    </figure>
+  </div>
+
 </section>
+
 
 <footer>
   <p>Built for GitHub Pages</p>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="../assets/ngram-chart.js"></script>
 <script src="assets/accordion.js"></script>
 </body>
 </html>
