@@ -53,7 +53,7 @@
     <p>Hover over any cell to see the pair of titles and their exact correlation.</p>
 
     <figure class="figure">
-      <div data-chart="clustermap" data-src="articles/data/analysis-c/clustermap.json"></div>
+      <div data-chart="clustermap" data-src="./articles/data/analysis-c/clustermap.json"></div>
       <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
     </figure>
   </div>
@@ -64,11 +64,11 @@
     <h2 class="section-heading">Top 15 Most Co-Moving Novel Pairs</h2>
     <p>The pairs below had the highest Pearson correlation in year-by-year Ngram frequency from 1900 to 2019. A high r means both books were mentioned more (and less) at the same moments in history.</p>
     <figure class="figure">
-      <div data-chart="pairs-table" data-src="articles/data/analysis-c/clustermap.json" data-mode="top"></div>
+      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="top"></div>
       <figcaption>Table 1 — Top 15 most co-moving novel pairs by Pearson r (English Ngram, 1900–2019). Color swatch mirrors the heatmap scale above.</figcaption>
     </figure>
     <figure class="figure">
-      <div data-chart="pair-trajectories" data-src="articles/data/analysis-c/pairs_positive.json"></div>
+      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_positive.json"></div>
       <figcaption>Fig. 2 — Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
     </figure>
   </div>
@@ -79,11 +79,11 @@
     <h2 class="section-heading">Top 15 Most Negatively Correlated Novel Pairs</h2>
     <p>These pairs moved in opposite directions over time — when one was frequently cited, the other tended to recede, suggesting they occupy different cultural moments or audiences.</p>
     <figure class="figure">
-      <div data-chart="pairs-table" data-src="articles/data/analysis-c/clustermap.json" data-mode="bottom"></div>
+      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="bottom"></div>
       <figcaption>Table 2 — Top 15 most negatively correlated novel pairs by Pearson r (English Ngram, 1900–2019).</figcaption>
     </figure>
     <figure class="figure">
-      <div data-chart="pair-trajectories" data-src="articles/data/analysis-c/pairs_negative.json"></div>
+      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_negative.json"></div>
       <figcaption>Fig. 3 — Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
     </figure>
   </div>
@@ -313,7 +313,7 @@
   <p>Built for GitHub Pages</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="../assets/ngram-chart.js"></script>
-<script src="assets/accordion.js"></script>
+<script src="./assets/ngram-chart.js"></script>
+<script src="./assets/accordion.js"></script>
 </body>
 </html>
