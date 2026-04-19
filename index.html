@@ -60,7 +60,7 @@
 </p>
 </section>
 
-  <hr class="divider" />
+<hr class="divider" />
 
 <section class="section" id="research">
 
@@ -115,31 +115,12 @@
                       growing interest in the fifty years after. This speaks to the fact that many 
                       classics are now acclaimed as being "ahead of their time" -- that even if 
                       these stories did not speak to readers during their time, they still were
-                      able to captivate later generations.
+                      able to captivate those of later generations.
     </p>
 
     <figure class="figure">
       <div data-chart="cluster-trajectory" data-src="./articles/data/analysis-5/cluster_3.json"></div>
       <figcaption>Fig. 3 — Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 3.</figcaption>
-    </figure>
-  </div>
-  <div>
-    <h2 class="section-heading">Are Classic Genres Rising or Falling?</h2>
-
-    <figure class="figure">
-      <div data-chart="genre-lines" data-src="./articles/data/genre/trends.json"></div>
-      <figcaption>Fig. 3 — Normalized Ngram activity (1.0 = each genre's long-run mean), 7-year smoothed, 1900–2019. Values above the dashed baseline indicate above-average cultural citation.</figcaption>
-    </figure>
-  </div>
-
-  <div>
-    <h2 class="section-heading">The Correlation Heatmap</h2>
-    <p>Each cell in the matrix below shows the Pearson correlation between two novels' Ngram frequency trajectories from 1900 to 2019. A value near 1 (blue) means the two books are mentioned together across time; near −0.3 (red) means their mentions diverge. The rows and columns are reordered by Ward hierarchical clustering, so the diagonal blocks reveal which novels move in cultural lockstep.</p>
-    <p>Hover over any cell to see the pair of titles and their exact correlation.</p>
-
-    <figure class="figure">
-      <div data-chart="clustermap" data-src="./articles/data/analysis-c/clustermap.json"></div>
-      <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
     </figure>
   </div>
 
@@ -331,18 +312,28 @@
         </div>
       </div>
     </li>
-
-
   </ul>
 
-  <div>
-    <h2 class="section-heading">Genre Lifecycle Curves</h2>
+    <div>
+    <h2 class="section-heading">Is the popularity of some classics correlated with others?</h2>
+
+    <p>While examining novels in isolation helps to shed light on their unique cultural influence, it 
+      is certainly true that great works of literature don't exist in a vacuum. Rather, novels that 
+      touch on similar themes and philisophical ideas tend to see similar trends in their popularity
+      over time. 
+    </p>
+    <p>Each cell in the matrix below shows the Pearson correlation between the mentions of classic novels 
+      in other corpora from 1900 to 2019. A value near 1 (red) means the two books within that cell are 
+      mentioned together across time; near −0.3 (blue) means their mentions diverge.</p>
+    <p>Hover over any cell to see the pair of titles and how much their popularities are correlated with
+        eachother.</p>
 
     <figure class="figure">
-      <div data-chart="genre-lines" data-src="./articles/data/genre/lifecycle.json"></div>
-      <figcaption>Fig. 1 — Normalized Ngram frequency (0–1) averaged by genre, plotted against years since publication (English corpus).</figcaption>
+      <div data-chart="clustermap" data-src="./articles/data/analysis-c/clustermap.json"></div>
+      <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
     </figure>
   </div>
+
   <div>
     <h2 class="section-heading">Genre Lifecycle on Calendar Timeline</h2>
 
