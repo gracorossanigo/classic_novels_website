@@ -49,9 +49,10 @@
 <p class="indent">    In any case, even if we cannot agree on what defines a “classic,” or if this is even 
                       a term we should be using anymore, it is hard to deny that there are certain books 
                       that have had a clear and measurable impact on Western culture. 
-                      Maybe a better question to start with, then, is this: how did these works become so 
-                      ingrained in Western culture? Or, what makes a “classic” different from other novels in 
-                      terms of their cultural impact? </p>
+                      Maybe better questions to start with, then, are these: how did these works become so 
+                      ingrained in Western culture? What makes a “classic” different from other novels in 
+                      terms of their cultural impact? How do classic novels correlate with, or even influence,
+                      other novels to rise in popularity? </p>
 <p class="indent" >   To try to answer these questions, we compiled a list of 119 widely agreed upon Western 
                       classics, and collected data on how mentions of their titles in other written works 
                       has changed over time. In theory, if their titles are being mentioned at certain points 
@@ -125,34 +126,6 @@
   </div>
 
   <hr class="divider" />
-
-  <div>
-    <h2 class="section-heading">Top 15 Most Co-Moving Novel Pairs</h2>
-    <p>The pairs below had the highest Pearson correlation in year-by-year Ngram frequency from 1900 to 2019. A high r means both books were mentioned more (and less) at the same moments in history.</p>
-    <figure class="figure">
-      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="top"></div>
-      <figcaption>Table 1 — Top 15 most co-moving novel pairs by Pearson r (English Ngram, 1900–2019). Color swatch mirrors the heatmap scale above.</figcaption>
-    </figure>
-    <figure class="figure">
-      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_positive.json"></div>
-      <figcaption>Fig. 2 — Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
-    </figure>
-  </div>
-
-  <hr class="divider" />
-
-  <div>
-    <h2 class="section-heading">Top 15 Most Negatively Correlated Novel Pairs</h2>
-    <p>These pairs moved in opposite directions over time — when one was frequently cited, the other tended to recede, suggesting they occupy different cultural moments or audiences.</p>
-    <figure class="figure">
-      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="bottom"></div>
-      <figcaption>Table 2 — Top 15 most negatively correlated novel pairs by Pearson r (English Ngram, 1900–2019).</figcaption>
-    </figure>
-    <figure class="figure">
-      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_negative.json"></div>
-      <figcaption>Fig. 3 — Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
-    </figure>
-  </div>
 
   <hr class="divider" />
 
@@ -315,14 +288,14 @@
   </ul>
 
     <div>
-    <h2 class="section-heading">Is the popularity of some classics correlated with others?</h2>
+    <h2 class="section-heading">Are the popularities of classic novels correlated with eachother?</h2>
 
     <p>While examining novels in isolation helps to shed light on their unique cultural influence, it 
       is certainly true that great works of literature don't exist in a vacuum. Rather, novels that 
-      touch on similar themes and philisophical ideas tend to see similar trends in their popularity
+      touch on similar themes and philosophical ideas tend to see similar trends in their popularity
       over time. 
     </p>
-    <p>Each cell in the matrix below shows the Pearson correlation between the mentions of classic novels 
+    <p>Each cell in the matrix below shows the correlation between the mentions of classic novels 
       in other corpora from 1900 to 2019. A value near 1 (red) means the two books within that cell are 
       mentioned together across time; near −0.3 (blue) means their mentions diverge.</p>
     <p>Hover over any cell to see the pair of titles and how much their popularities are correlated with
@@ -331,6 +304,46 @@
     <figure class="figure">
       <div data-chart="clustermap" data-src="./articles/data/analysis-c/clustermap.json"></div>
       <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
+    </figure>
+  </div>
+
+    <div>
+    <h2 class="section-heading">Taking a closer look</h2>
+    <p>Taken from the above visualization, the pairs below had the highest correlation in year-by-year 
+        Ngram frequency of mentions from 1900 to 2019. A high r means both books were mentioned more 
+        (and less) at the same moments in history, which would likely indicate that they touch on 
+        similar themes that are deemed by audiences as being culturally relevant. However, there are 
+        some pairs listed -- Dracula and Wide Sargasso Sea, Frankenstein and Beloved, or Brave New 
+        World and Anna Karenina -- that seem to have been produced in widely different cultura
+        contexts (not to mention being published decades, even centuries, apart). </p>
+        <p>Nevertheless, 
+        when viewed with a wide lens, these novels might be able to be compared -- Dracula and Wide 
+        Sargasso Sea, for example, both touch on themes of xenophobia and "otherness." Frankenstein 
+        and Beloved both have characters who were created and abandoned, and appear to haunt their 
+        "makers" for the duration of the book. Brave New World and Anna Karenina comment on the 
+        depraved nature of modern elite society and the lives of people who live in empty and 
+        fabricated worlds. </p>
+    <p></p>
+    <figure class="figure">
+      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="top"></div>
+      <figcaption>Table 1 — Top 15 most co-moving novel pairs by Pearson r (English Ngram, 1900–2019). Color swatch mirrors the heatmap scale above.</figcaption>
+    </figure>
+    <figure class="figure">
+      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_positive.json"></div>
+      <figcaption>Fig. 2 — Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
+    </figure>
+  </div>
+
+  <div>
+    <p>These following pairs moved in opposite directions over time — when one was frequently cited, 
+        the other tended to recede, suggesting they occupy different cultural moments or audiences.</p>
+    <figure class="figure">
+      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="bottom"></div>
+      <figcaption>Table 2 — Top 15 most negatively correlated novel pairs by Pearson r (English Ngram, 1900–2019).</figcaption>
+    </figure>
+    <figure class="figure">
+      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_negative.json"></div>
+      <figcaption>Fig. 3 — Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
     </figure>
   </div>
 
