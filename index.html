@@ -33,7 +33,7 @@
   </div>
   <div class="hero-tag">Cornell Data Journal</div>
   <h1>What Makes a Novel a Classic?</h1>
-  <p>An exploration using the Google Ngram dataset to find out what makes classic novels different from the rest</p>
+  <p>An exploration into the data behind the popularity of the classics</p>
 </section >
 
 
@@ -126,6 +126,87 @@
   </div>
 
   <hr class="divider" />
+
+      <div>
+    <h2 class="section-heading">Are the popularities of classic novels correlated with eachother?</h2>
+
+    <p class="indent">Great works of literature don't exist in a vacuum. Rather, novels that 
+      touch on similar themes and philosophical ideas tend to see similar trends in their popularity
+      over time, and this can help us understand how classics might influence the discourse on other 
+      novels, driving up their popularity and eventually allowing them to become classics as well. 
+    </p>
+    <p class="indent">Each cell in the matrix below shows the correlation between the mentions of classic novels 
+      in other corpora from 1900 to 2019. A value near 1 (red) means the two books within that cell are 
+      mentioned together across time; near −0.3 (blue) means their mentions diverge.</p>
+    <p class="indent">Hover over any cell to see the pair of titles and how much their popularities are correlated with
+        eachother.</p>
+
+    <figure class="figure">
+      <div data-chart="clustermap" data-src="./articles/data/analysis-c/clustermap.json"></div>
+      <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
+    </figure>
+  </div>
+
+    <div>
+    <h2 class="section-heading">Taking a closer look</h2>
+    <p class="indent">Taken from the above visualization, the pairs below had the highest correlation in year-by-year 
+        Ngram frequency of mentions from 1900 to 2019. A high r means both books were mentioned more 
+        (and less) at the same moments in history, which would likely indicate that they touch on 
+        similar themes that are deemed by audiences as being culturally relevant. However, there are 
+        some pairs listed -- Dracula and Wide Sargasso Sea, Frankenstein and Beloved, or Brave New 
+        World and Anna Karenina -- that seem to have been produced in widely different cultura
+        contexts (not to mention being published decades, even centuries, apart). </p>
+        <p class="indent">Nevertheless, 
+        when viewed with a wide lens, these novels might be able to be compared -- Dracula and Wide 
+        Sargasso Sea, for example, both have central characters that are victims of xenophobia and 
+        being "othered." Frankenstein 
+        and Beloved both have characters who were created and abandoned, and appear to haunt their 
+        "makers" for the duration of the book. Brave New World and Anna Karenina comment on the 
+        depraved nature of modern elite society and the lives of people who live in empty and 
+        fabricated worlds. Therefore, the correlation patterns that these novels show in their 
+        popularity over time is a testament to the fact that the staying power and universal relevance that defines the 
+        classics is found in the common themes, philosophical ideas, and character archetypes that 
+        have resonated among readers across time and place. </p>
+    <figure class="figure">
+      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="top"></div>
+      <figcaption>Table 1 — Top 15 most co-moving novel pairs by Pearson r (English Ngram, 1900–2019). Color swatch mirrors the heatmap scale above.</figcaption>
+    </figure>
+    <figure class="figure">
+      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_positive.json"></div>
+      <figcaption>Fig. 2 — Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
+    </figure>
+  </div>
+
+  <div>
+    <p class="indent">These following pairs moved in opposite directions over time — when one was frequently cited, 
+        the other tended to recede, suggesting they occupy different cultural moments or audiences.
+        This provides an important counterpoint to the picture of the classics that was just painted 
+        above, as a body of works with interconnected themes motifs, and universal appeal. In reality,
+        "the classics" refers to a large body of works that as a whole defy categorization, as classic
+        novels often contain philosphical and moral ideas that are contradictory to those found in other 
+        classics, or hold relevance to cultures that might be largely isolated from one another. While 
+        the correlation heat map shown above does indicate that a majority of the most lauded classics 
+        are positively correlated with eachother, it is important to recognize that there is no single
+        thematic thread that runs through all the works that earn the title of "classics."
+        </p>
+    <figure class="figure">
+      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="bottom"></div>
+      <figcaption>Table 2 — Top 15 most negatively correlated novel pairs by Pearson r (English Ngram, 1900–2019).</figcaption>
+    </figure>
+    <figure class="figure">
+      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_negative.json"></div>
+      <figcaption>Fig. 3 — Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
+    </figure>
+  </div>
+
+  <div>
+    <h2 class="section-heading">Genre Lifecycle on Calendar Timeline</h2>
+
+    <figure class="figure">
+      <div data-chart="genre-lines" data-src="./articles/data/genre/lifecycle_calendar.json"></div>
+      <figcaption>Fig. 2 — Raw Ngram frequency averaged by genre on a calendar timeline (1850–2019). Genres are directly comparable since no within-genre normalization is applied.</figcaption>
+    </figure>
+  </div>
 
   <hr class="divider" />
 
@@ -285,87 +366,6 @@
       </div>
     </li>
   </ul>
-
-    <div>
-    <h2 class="section-heading">Are the popularities of classic novels correlated with eachother?</h2>
-
-    <p>While examining novels in isolation helps to shed light on their unique cultural influence, it 
-      is certainly true that great works of literature don't exist in a vacuum. Rather, novels that 
-      touch on similar themes and philosophical ideas tend to see similar trends in their popularity
-      over time. 
-    </p>
-    <p>Each cell in the matrix below shows the correlation between the mentions of classic novels 
-      in other corpora from 1900 to 2019. A value near 1 (red) means the two books within that cell are 
-      mentioned together across time; near −0.3 (blue) means their mentions diverge.</p>
-    <p>Hover over any cell to see the pair of titles and how much their popularities are correlated with
-        eachother.</p>
-
-    <figure class="figure">
-      <div data-chart="clustermap" data-src="./articles/data/analysis-c/clustermap.json"></div>
-      <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
-    </figure>
-  </div>
-
-    <div>
-    <h2 class="section-heading">Taking a closer look</h2>
-    <p>Taken from the above visualization, the pairs below had the highest correlation in year-by-year 
-        Ngram frequency of mentions from 1900 to 2019. A high r means both books were mentioned more 
-        (and less) at the same moments in history, which would likely indicate that they touch on 
-        similar themes that are deemed by audiences as being culturally relevant. However, there are 
-        some pairs listed -- Dracula and Wide Sargasso Sea, Frankenstein and Beloved, or Brave New 
-        World and Anna Karenina -- that seem to have been produced in widely different cultura
-        contexts (not to mention being published decades, even centuries, apart). </p>
-        <p>Nevertheless, 
-        when viewed with a wide lens, these novels might be able to be compared -- Dracula and Wide 
-        Sargasso Sea, for example, both have central characters that are victims of xenophobia and 
-        being "othered." Frankenstein 
-        and Beloved both have characters who were created and abandoned, and appear to haunt their 
-        "makers" for the duration of the book. Brave New World and Anna Karenina comment on the 
-        depraved nature of modern elite society and the lives of people who live in empty and 
-        fabricated worlds. Therefore, the correlation patterns that these novels show in their 
-        popularity over time is a testament to the fact that the staying power and universal relevance that defines the 
-        classics is found in the common themes, philosophical ideas, and character archetypes that 
-        have resonated among readers across time and place. </p>
-    <figure class="figure">
-      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="top"></div>
-      <figcaption>Table 1 — Top 15 most co-moving novel pairs by Pearson r (English Ngram, 1900–2019). Color swatch mirrors the heatmap scale above.</figcaption>
-    </figure>
-    <figure class="figure">
-      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_positive.json"></div>
-      <figcaption>Fig. 2 — Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
-    </figure>
-  </div>
-
-  <div>
-    <p>These following pairs moved in opposite directions over time — when one was frequently cited, 
-        the other tended to recede, suggesting they occupy different cultural moments or audiences.
-        This provides an important counterpoint to the picture of the classics that was just painted 
-        above, as a body of works with interconnected themes motifs, and universal appeal. In reality,
-        "the classics" refers to a large body of works that as a whole defy categorization, as classic
-        novels often contain philosphical and moral ideas that are contradictory to those found in other 
-        classics, or hold relevance to cultures that might be largely isolated from one another. While 
-        the correlation heat map shown above does indicate that a majority of the most lauded classics 
-        are positively correlated with eachother, it is important to recognize that there is no single
-        thematic thread that runs through all the works that earn the title of "classics."
-        </p>
-    <figure class="figure">
-      <div data-chart="pairs-table" data-src="./articles/data/analysis-c/clustermap.json" data-mode="bottom"></div>
-      <figcaption>Table 2 — Top 15 most negatively correlated novel pairs by Pearson r (English Ngram, 1900–2019).</figcaption>
-    </figure>
-    <figure class="figure">
-      <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_negative.json"></div>
-      <figcaption>Fig. 3 — Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
-    </figure>
-  </div>
-
-  <div>
-    <h2 class="section-heading">Genre Lifecycle on Calendar Timeline</h2>
-
-    <figure class="figure">
-      <div data-chart="genre-lines" data-src="./articles/data/genre/lifecycle_calendar.json"></div>
-      <figcaption>Fig. 2 — Raw Ngram frequency averaged by genre on a calendar timeline (1850–2019). Genres are directly comparable since no within-genre normalization is applied.</figcaption>
-    </figure>
-  </div>
 
 </section>
 
