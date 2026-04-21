@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- ↓ Change this to your article title -->
-  <title>Article Title — Classic Novels</title>
+  <title>Little Women — Classic Novels</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
@@ -29,15 +29,12 @@
        ====================================================== -->
 
   <!-- Subcategory label that appears above the title -->
-  <div class="article-eyebrow">Literary Analysis · Ngram Study</div>
 
   <!-- ↓ Your article / novel title -->
-  <h1>Novel Title</h1>
+  <h1>Little Women</h1>
 
   <!-- Tags — add or remove <span> elements as needed -->
   <div class="tags-row">
-    <span class="tag">Literature</span>
-    <span class="tag">Ngram</span>
     <!-- <span class="tag">Add more tags here</span> -->
   </div>
 
@@ -48,24 +45,30 @@
   <div class="book-card">
     <div class="book-field">
       <div class="field-label">Author</div>
-      <div class="field-value">Author Name</div>
+      <div class="field-value">Louisa May Alcott</div>
     </div>
     <div class="book-field">
       <div class="field-label">Published</div>
-      <div class="field-value">Year</div>
+      <div class="field-value">Two installments, 1868 and 1869</div>
     </div>
     <div class="book-field">
       <div class="field-label">Original Language</div>
-      <div class="field-value">Language</div>
+      <div class="field-value">English</div>
     </div>
     <div class="book-field">
       <div class="field-label">Genre</div>
-      <div class="field-value">Genre · Subgenre</div>
+      <div class="field-value">Domestic Fiction · Coming-of-Age</div>
     </div>
   </div>
 
   <!-- Opening paragraph shown in a styled callout box -->
-  <p class="lead">Write a short 1–2 sentence hook here. This appears prominently at the top.</p>
+  <p class="lead">Louisa May Alcott's magnum opus, Little Women is a classic tale 
+                    of love, loss, and family, set against the backdrop of the 
+                    U.S. Civil War. Combining strong American Protestant 
+                    overtones with discussions of female agency and independence 
+                    from the constraints of domestic life, Alcott's tale has spoken to young women across 
+                    generations, all over the world. 
+  </p>
 
   <hr class="divider" />
 
@@ -91,8 +94,15 @@
   <!-- CHART 1: per-language frequencies -->
   <figure class="figure">
     <div data-chart="separate" data-src="./data/little-women/little-women.json"></div>
-    <figcaption>Fig. 1 — Description of this chart.</figcaption>
+    <figcaption>Google Books Ngram frequency of "Little Women" per 
+      language corpus (per million words).</figcaption>
   </figure>
+
+  <p>While Little Women was overwhelmingly popular in English for the first 30 years after its publication,
+    there is evidence in the graph of a particularly strong cultural reception in Italian and French speaking countries,
+    which is supported by the fact that Little Women was widely translated and disseminated across the world at the turn of the 
+    20th century. While it is truly a classic of American literature, its leading characters of Meg, Beth, Amy, and Jo
+    each embody different ideals of womanhood, which has allowed its story to resonate across a variety of cultures. </p>
 
 
   <!-- ======================================================
@@ -101,30 +111,75 @@
        ====================================================== -->
 
   <div>
-    <h2 class="section-heading">Section Title</h2>
-    <p>Write your section text here.</p>
 
     <!-- CHART 2: aggregated cross-language index (same JSON as Chart 1) -->
     <figure class="figure">
-      <div data-chart="aggregate" data-src="./data/FOLDER/FILENAME.json"></div>
-      <figcaption>Fig. 2 — Description of this chart.</figcaption>
+      <div data-chart="aggregate" data-src="./data/little-women/little-women.json"></div>
+      <figcaption>Aggregated cross-language popularity index for 
+        "Little Women" (normalized).</figcaption>
     </figure>
+  </div>
+
+  <hr class="divider" />
+
+    <div>
+    <h2 class="section-heading">Alcott's Other Works</h2>
+
+    <!-- CHART 4: comparison with other novels by Alcott-->
+    <figure class="figure">
+      <div data-chart="comparison" data-src="./data/little-women/alcott-works.json"></div>
+      <figcaption>Comparison with Alcott's other novels.</figcaption>
+    </figure>
+
+    <p>Little Women clearly dominates throughout the entire timeline, maintaining a significantly 
+        higher frequency than Little Men, Eight Cousins, and An Old-Fashioned Girl. All four novels 
+        show an early peak around publication before declining, but Little Women is the only one that 
+        recovers and grows substantially, particularly after the Hollywood film adaptation and again 
+        after the 2019 Greta Gerwig film.
+</p>
   </div>
 
   <hr class="divider" />
 
   <div>
-    <h2 class="section-heading">Another Section Title</h2>
-    <p>Write your section text here.</p>
+    <h2 class="section-heading">Comparison with Non-Classics Within the Same Genre</h2>
 
-    <!-- CHART 3: comparison with other novels -->
+    <!-- CHART 4: comparison with other novels (non classics)-->
     <figure class="figure">
-      <div data-chart="comparison" data-src="./data/FOLDER/FILENAME-comparison.json"></div>
-      <figcaption>Fig. 3 — Description of this chart.</figcaption>
+      <div data-chart="comparison" data-src="./data/little-women/little-women-non-classics.json"></div>
+      <figcaption>Comparison with non-classics within the same genre (female coming-of-age).</figcaption>
     </figure>
   </div>
 
+  <p>All three of the books above are within the genre of female coming-of-age stories, but only Little Women
+    has stayed culturally relevant into today. A Girl of the Limberlost and The Story of Avis peak sharply at 
+    publication then fade to near zero, while Little Women dips initially but recovers and grows steadily over time. 
+    This strongly illustrates how classics accumulate cultural relevance while non-classics don't last long in the 
+    collective memory past their initial moment of publication.
+</p>
+
   <hr class="divider" />
+
+      <!-- CHART 5: comparison with other novels (classics)-->
+    <figure class="figure">
+      <div data-chart="comparison" data-src="./data/little-women/little-women-classics.json"></div>
+      <figcaption>Comparison with other classics within the same genre (female coming-of-age).</figcaption>
+    </figure>
+  </div>
+
+  <p>Seeing Little Women’s popularity perform against two other classics with similar themes on womens' roles, Jane Eyre and
+    and Middlemarch, it is worth noting how similar the popularity trajectories of all of these books are. Jane Eyre stands out immediately 
+    with the highest early peak, reflecting the sensation it caused upon publication in 1847, and it maintains the strongest 
+    presence throughout the entire timeline. Little Women launches with a strong peak around publication that is similar to the peak of Jane Eyre and 
+    Middlemarch, but still more prominent, speaking to how it was received by audiences eager for stories centered on the inner lives of women. 
+    All four novels dip through the early 20th century before recovering, but the second wave feminist movement of the 1970s 
+    appears to be a turning point for the entire group, with all four books showing renewed growth. Given that
+    all four novels speak directly to themes of female identity and ambition that were at the center of this cultural moment, increased 
+    readership of these novels was likely inspired by these contemporary movements. 
+    In the modern era, all four maintain strong and growing trajectories, with Jane Eyre and Little Women being the most 
+    relevant, it seems, confirming that stories about women navigating society and selfhood even in hundreds of years past are still 
+    relevent to our current cultural era. 
+</p>
 
 
   <!-- ======================================================
@@ -145,18 +200,10 @@
   </blockquote>
   -->
 
-
-  <hr class="divider" />
-
   <!-- ======================================================
        CONCLUSION
        ====================================================== -->
-  <div>
-    <h2 class="section-heading">Conclusion</h2>
-    <p>Write your conclusion here.</p>
-  </div>
 
-  <hr class="divider" />
 
   <div class="nav-footer">
     <span></span>
