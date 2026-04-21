@@ -23,6 +23,7 @@ body {
   font-size: 16px;
   line-height: 1.75;
   min-height: 100vh;
+  margin-left: 30px;
 }
 
 /* ── NOISE OVERLAY ── */

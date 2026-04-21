@@ -38,7 +38,10 @@
 
 
 <section class="hero-like">
-  <p class="indent">    What makes a book a “classic”? How should we define what works belong in the 
+
+  <hr class="divider" />
+
+  <p>    What makes a book a “classic”? How should we define what works belong in the 
                         Western literary canon? These questions have been debated in both academic and 
                         public circles for centuries. To some, the classics represent the pinnacle of human 
                         literary expression, works that deserve to be taught because they hold inherent and 
@@ -46,26 +49,28 @@
                         outdated and insufficient term to use to describe literature that spans hundreds of 
                         years, across a variety of subcultures. 
   </p>
-<p class="indent">    In any case, even if we cannot agree on what defines a “classic,” or if this is even 
+<p>    In any case, even if we cannot agree on what defines a “classic,” or if this is even 
                       a term we should be using anymore, it is hard to deny that there are certain books 
                       that have had a clear and measurable impact on Western culture. 
                       Maybe better questions to start with, then, are these: how did these works become so 
                       ingrained in Western culture? What makes a “classic” different from other novels in 
                       terms of their cultural impact? How do classic novels correlate with, or even influence,
                       other novels to rise in popularity? </p>
-<p class="indent" >   To try to answer these questions, we compiled a list of 119 widely agreed upon Western 
+<p>   To try to answer these questions, we compiled a list of 119 widely agreed upon Western 
                       classics, and collected data on how mentions of their titles in other written works 
                       has changed over time. In theory, if their titles are being mentioned at certain points 
                       in history more so than others, this can act as a measure of how much discussion is 
                       ocurring surrounding the novel.
 </p>
-</section>
 
-<hr class="divider" />
+  <hr class="divider" />
+</section>
 
 <section class="section" id="research">
 
-    <p class="indent"> To determine if there were any general trajectories that novels follow in their path to 
+    <h2 class="section-heading">The path to becoming a classic</h2>
+
+    <p> To determine if there were any general trajectories that novels follow in their path to 
                         becoming classics, we ran a clusting algorithm to group our classic novels by similar 
                         patterns of their mentions in the first 50 years after their publication. In doing so, 
                         we found that there isn't a "one size fits all" path for a book to become a classic; 
@@ -76,7 +81,7 @@
     <div>
     <h2 class="section-heading">Cluster 1: Instant Classics</h2>
 
-    <p class="indent">This category describes those novels that either stayed stable in their relavence 
+    <p>This category describes those novels that either stayed stable in their relavence 
                       in the first 50 years after their publication, or who continually saw rises and 
                       falls in their mentions over time. In either case, the novels in this trajectory 
                       saw an overal linear rise in their popularity in the first few years after 
@@ -85,7 +90,7 @@
 
     <figure class="figure">
       <div data-chart="cluster-trajectory" data-src="./articles/data/analysis-5/cluster_0.json"></div>
-      <figcaption>Fig. 1 — Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 1.</figcaption>
+      <figcaption>Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 1.</figcaption>
     </figure>
   </div>
 
@@ -94,7 +99,7 @@
   <div>
     <h2 class="section-heading">Cluster 2: First Impression Classics</h2>
 
-        <p class="indent">Many of the clasics novels we examined were massively popular at the time of 
+        <p>Many of the clasics novels we examined were massively popular at the time of 
                           their release, but quickly trailed off in popularity in the following years.
                           This supports the fact that many classics during their time were actually 
                           considered to be "fads" that wouldn't stand the test of time. 
@@ -102,7 +107,7 @@
 
     <figure class="figure">
       <div data-chart="cluster-trajectory" data-src="./articles/data/analysis-5/cluster_2.json"></div>
-      <figcaption>Fig. 2 — Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 2.</figcaption>
+      <figcaption>Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 2.</figcaption>
     </figure>
   </div>
 
@@ -111,7 +116,7 @@
   <div>
     <h2 class="section-heading">Cluster 3: Slow Burners</h2>
 
-    <p class="indent">In some cases, however, novels which we consider to be classics today were not 
+    <p>In some cases, however, novels which we consider to be classics today were not 
                       acclaimed at all at the time of their publication, but saw a steady path of 
                       growing interest in the fifty years after. This speaks to the fact that many 
                       classics are now acclaimed as being "ahead of their time" -- that even if 
@@ -121,7 +126,7 @@
 
     <figure class="figure">
       <div data-chart="cluster-trajectory" data-src="./articles/data/analysis-5/cluster_3.json"></div>
-      <figcaption>Fig. 3 — Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 3.</figcaption>
+      <figcaption>Normalized Ngram frequency (years 0–50 after publication) for novels in Cluster 3.</figcaption>
     </figure>
   </div>
 
@@ -130,33 +135,33 @@
       <div>
     <h2 class="section-heading">Are the popularities of classic novels correlated with eachother?</h2>
 
-    <p class="indent">Great works of literature don't exist in a vacuum. Rather, novels that 
+    <p>Great works of literature don't exist in a vacuum. Rather, novels that 
       touch on similar themes and philosophical ideas tend to see similar trends in their popularity
       over time, and this can help us understand how classics might influence the discourse on other 
       novels, driving up their popularity and eventually allowing them to become classics as well. 
     </p>
-    <p class="indent">Each cell in the matrix below shows the correlation between the mentions of classic novels 
+    <p>Each cell in the matrix below shows the correlation between the mentions of classic novels 
       in other corpora from 1900 to 2019. A value near 1 (red) means the two books within that cell are 
-      mentioned together across time; near −0.3 (blue) means their mentions diverge.</p>
-    <p class="indent">Hover over any cell to see the pair of titles and how much their popularities are correlated with
+      mentioned together across time; near −0.3 (blue) means their mentions diverge. Hover over any cell to see 
+      the pair of titles and how much their popularities are correlated with
         eachother.</p>
 
     <figure class="figure">
       <div data-chart="clustermap" data-src="./articles/data/analysis-c/clustermap.json"></div>
-      <figcaption>Fig. 1 — Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
+      <figcaption>Pearson r of year-by-year English Ngram frequencies (1900–2019), novels ordered by Ward hierarchical clustering. Red = high positive correlation; blue = low/negative.</figcaption>
     </figure>
   </div>
 
     <div>
     <h2 class="section-heading">Taking a closer look</h2>
-    <p class="indent">Taken from the above visualization, the pairs below had the highest correlation in year-by-year 
+    <p>Taken from the above visualization, the pairs below had the highest correlation in year-by-year 
         Ngram frequency of mentions from 1900 to 2019. A high r means both books were mentioned more 
         (and less) at the same moments in history, which would likely indicate that they touch on 
         similar themes that are deemed by audiences as being culturally relevant. However, there are 
         some pairs listed -- Dracula and Wide Sargasso Sea, Frankenstein and Beloved, or Brave New 
         World and Anna Karenina -- that seem to have been produced in widely different cultura
         contexts (not to mention being published decades, even centuries, apart). </p>
-        <p class="indent">Nevertheless, 
+        <p>Nevertheless, 
         when viewed with a wide lens, these novels might be able to be compared -- Dracula and Wide 
         Sargasso Sea, for example, both have central characters that are victims of xenophobia and 
         being "othered." Frankenstein 
@@ -173,12 +178,12 @@
     </figure>
     <figure class="figure">
       <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_positive.json"></div>
-      <figcaption>Fig. 2 — Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
+      <figcaption>Normalized Ngram trajectories for the top 3 most co-moving pairs (1900–2019). Hover a line to highlight it.</figcaption>
     </figure>
   </div>
 
   <div>
-    <p class="indent">These following pairs moved in opposite directions over time — when one was frequently cited, 
+    <p>These following pairs moved in opposite directions over time — when one was frequently cited, 
         the other tended to recede, suggesting they occupy different cultural moments or audiences.
         This provides an important counterpoint to the picture of the classics that was just painted 
         above, as a body of works with interconnected themes motifs, and universal appeal. In reality,
@@ -195,23 +200,60 @@
     </figure>
     <figure class="figure">
       <div data-chart="pair-trajectories" data-src="./articles/data/analysis-c/pairs_negative.json"></div>
-      <figcaption>Fig. 3 — Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
+      <figcaption>Normalized Ngram trajectories for the top 3 most negatively correlated pairs (1900–2019). Hover a line to highlight it.</figcaption>
     </figure>
   </div>
 
+  <hr class="divider" />
+
   <div>
-    <h2 class="section-heading">Genre Lifecycle on Calendar Timeline</h2>
+    <h2 class="section-heading">Which literary genres are represented among the classics?</h2>
+
+    <p>If the popularity of novels are correlated with eachother based on the 
+                      mutual presence of certain themes and motifs, this might be an indication that these 
+                      novels are categorized in the same literary "genre". Therefore, organizing our novels
+                      by genre could provide insight into how classics within those genres have changed in popularity 
+                      over time. 
+    </p>
 
     <figure class="figure">
       <div data-chart="genre-lines" data-src="./articles/data/genre/lifecycle_calendar.json"></div>
-      <figcaption>Fig. 2 — Raw Ngram frequency averaged by genre on a calendar timeline (1850–2019). Genres are directly comparable since no within-genre normalization is applied.</figcaption>
+      <figcaption>Raw Ngram frequency averaged by genre on a calendar timeline (1850–2019). Genres are directly comparable since no within-genre normalization is applied.</figcaption>
     </figure>
+
+    <p>Clearly, Gothic classics have seen the most dramatic rise in their popularity. While books 
+                      like Wuthering Heights and Dracula were not immediately sucessful upon their release,
+                      they have clearly become staples in the Western literary canon. On the other hand, classic 
+                      adventure novels have seen a decrease in popularity since around 1850, suggesting they have a 
+                      diminished cultural relevance in the modern day. While we might tend to think of "the classics"
+                      as being a static group of books with a steady pattern of popular attention and acclaim, the 
+                      reality is that there are many books that were once considered classics that many scholars would 
+                      argue no longer hold that title. Only time will tell if classics in the Adventure genre - such as 
+                      Moby Dick or The Three Musketeers -- will see a renewed interest among the coming generations' 
+                      readers, or if many of them will be lost to history.
+    </p>
+
+    <p>The jumps seen in the above graph indicate the publication of works that were seminal in establishing
+                      certain genres, or at pushing certain genres into the spotlight that were not previously considered 
+                      worthy of reading. For example, books such as Ulysses, A Portrait of the Artist as a Young 
+                      Man, and To the Lighthouse were all published around 1920, and are viewed as seminal works in the genre 
+                      of "Literary Fiction" and modernism -- all of these books are responsible, then, for the rise of this 
+                      genre at the beginning of the 20th century. 
+    </p>
+
   </div>
 
   <hr class="divider" />
 
-  
-  <hr class="divider" />
+  <h2 class="section-heading">Case studies</h2>
+
+  <p>While the analysis above is useful for determining the macro trends that emerge among the classics, it is 
+                    undeniable that each book in the Western canon has had a unique and singular impact on literary history.
+                    The following "case studies" explore in-depth some of the most recognizable classics in our dataset. 
+                    Explore the following pages to learn about the impact that these novels have had on our society over 
+                    the years. 
+
+  </p>
 
   
   <div class="section-label">Articles — 9 entries</div>
@@ -246,19 +288,19 @@
       <button class="accordion-trigger" data-index="1">
         <span class="article-num">02</span>
         <span class="article-title">Pride and Prejudice</span>
-        <span class="article-tag">lorem ipsum</span>
+        <span class="article-tag"></span>
         <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
       <div class="accordion-panel" id="panel-1">
         <div class="panel-inner">
-          <p class="panel-desc">lorem ipsum</p>
+          <p class="panel-desc">It is a truth universally acknowledged that all people reading this article should take a look at this case study.</p>
           <div class="panel-meta">
             <span>5 min read</span>
             <span>Authors: Graco and Maia</span>
           </div>
-          <a class="read-btn" href="articles/article-2.html">
+          <a class="read-btn" href="articles/pride-and-prejudice.html">
             Read Case Study
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -366,6 +408,19 @@
       </div>
     </li>
   </ul>
+
+  <div>
+  <hr class="divider" />
+
+  <p>If you want to learn more about classics that we didn't include in our case studies,
+    you can explore their popularity graphs using the same dataset we used for this project 
+    (The Google NGram dataset) <a href="https://books.google.com/ngrams/">here.</a> 
+  </p>
+
+  <p></p>
+
+  </div>
+  
 
 </section>
 
