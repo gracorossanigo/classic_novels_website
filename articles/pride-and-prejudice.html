@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pride and Prejudice — Classic Novels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<header>
+  <a class="logo" href="../index.html">◈ Classic Novels</a>
+  <a class="back-link" href="../index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    All Articles
+  </a>
+</header>
+
+<main>
+
+  <!-- ======================================================
+       ARTICLE HEADER
+       ====================================================== -->
+
+  <!-- Subcategory label that appears above the title -->
+  <div class="article-eyebrow">Literary Analysis · Ngram Study</div>
+
+  <!-- ↓ Your article / novel title -->
+  <h1>Pride and Prejudice</h1>
+
+  <!-- Tags — add or remove <span> elements as needed -->
+  <div class="tags-row">
+    <!-- <span class="tag">Add more tags here</span> -->
+  </div>
+
+  <!-- ======================================================
+       BOOK METADATA CARD
+       Fill in the four fields below.
+       ====================================================== -->
+  <div class="book-card">
+    <div class="book-field">
+      <div class="field-label">Author</div>
+      <div class="field-value">Jane Austen</div>
+    </div>
+    <div class="book-field">
+      <div class="field-label">Published</div>
+      <div class="field-value">1813</div>
+    </div>
+    <div class="book-field">
+      <div class="field-label">Original Language</div>
+      <div class="field-value">English</div>
+    </div>
+    <div class="book-field">
+      <div class="field-label">Genre</div>
+      <div class="field-value">Social Satire · Romance</div>
+    </div>
+  </div>
+
+  <!-- Opening paragraph shown in a styled callout box -->
+  <p class="lead">Austen’s Pride and Prejudice has become a cultural phenomenon in the 
+                213 years since its publication, with multiple movie and television adaptations 
+                being made. Arguably one of the most recognized and read among the classics, we 
+                will examine the course of its popularity below. </p>
+
+  <hr class="divider" />
+
+
+  <!-- ======================================================
+       CHARTS
+       To add a chart, use a <div> with two attributes:
+
+         data-chart  → the chart type. Options:
+                         "separate"    per-language frequency lines
+                         "aggregate"   single normalized aggregate line
+                         "comparison"  compare multiple novels
+
+         data-src    → path to the JSON file exported from the notebook
+                       (relative to this HTML file)
+
+       Example:
+         <div data-chart="separate" data-src="./data/article-2/my-novel.json"></div>
+
+       Wrap it in a <figure> to add a caption below.
+       ====================================================== -->
+
+  <!-- CHART 1: per-language frequencies -->
+  <figure class="figure">
+    <div data-chart="separate" data-src="./data/pride-and-prejudice/pride-and-prejudice.json"></div>
+    <figcaption>Google Books Ngram frequency of "Pride and Prejudice" per 
+      language corpus (per million words).</figcaption>
+  </figure>
+
+  <p>Pride and Prejudice has been most popular among English speaking peoples, and 
+    its introduction into other Western cultures seemingly only took off in the late 
+    1940s (around the time the first film adaptation was released by Robert Z. Leonard), 
+    suggesting that this film gave a wider range of cultures access to the story. </p>
+
+
+  <!-- ======================================================
+       ARTICLE SECTIONS
+       Copy and paste the <div> block below to add more sections.
+       ====================================================== -->
+
+  <div>
+    <!-- CHART 2: aggregated cross-language index (same JSON as Chart 1) -->
+    <figure class="figure">
+      <div data-chart="aggregate" data-src="./data/pride-and-prejudice/pride-and-prejudice.json"></div>
+      <figcaption>Aggregated cross-language popularity index for 
+        "Pride and Prejudice" (normalized).</figcaption>
+    </figure>
+  </div>
+
+    <p>The publication of new editions of the book and film and television adaptations 
+    resulted in sharp rises in Pride and Prejudice’s popularity, with the story’s 
+    popularity rising rapidly in the last 30 years, in the wake of major adaptations 
+    such as BBC’s 1995 miniseries and Joe Wright’s 2005 film.</p>
+    
+
+      <h2 class="section-heading">The Popularity of Pride and Prejudice in the Interwar Period</h2>
+
+  <p>While the above graphs show that Pride and Prejudice began to decline in popularity post 1900, 
+    there seems to have been a resurgence in the popularity of the novel between World War I and II 
+    which is not as pronounced among her other novels.</p>
+
+  <p>All of Austen’s novels, but Pride and Prejudice in particular, satirize marriage as a means of 
+    economic gain and social climbing for women in Regency-era England. To the women living in the 
+    aftermath of World War I, many of whom lost husbands and prospective suitors in the conflict, 
+    or who were facing the harsh economic realities of the Great Depression, this practical view of 
+    marriage might have struck a chord. Just as Jane Austen broke down the idealized tropes of 
+    matrimony that had previously been the standard, the renewed interest in Pride and Prejudice 
+    seen during the 20s and 30s might have reflected a breaking down in society of similar romantic 
+    ideals regarding marriage. 
+</p>
+
+  <hr class="divider" />
+
+  <div>
+    <h2 class="section-heading">Popularity Compared to Austen's Other Novels</h2>
+
+    <!-- CHART 3: comparison with other novels -->
+    <figure class="figure">
+      <div data-chart="comparison" data-src="./data/pride-and-prejudice/austen-works.json"></div>
+      <figcaption>Comparison with Austen's other novels.</figcaption>
+    </figure>
+  </div>
+
+    <p>Austen’s novels had comparable levels of popularity until just before the end of the 
+      19th century, when Pride and Prejudice began to surpass Sense and Sensibility, Northanger 
+      Abbey, and Mansfield Park. This suggests the recognition of Pride and Prejudice as a 
+      uniquely valuable work – not just the valuation of Austen as an author – which is reflected 
+      in its high status above her other novels today.</p>
+
+  <h2 class="section-heading">The Adaptation Effect</h2>
+
+  <p>Clearly, there has been a massive increase in the number of Jane Austen book adaptations in 
+      tv and film within the last 30 years or so. While it is difficult to tell whether this is due 
+      to more people reading the novels because of the release of the adaptations, or if less people
+      are reading the novels because so many film and tv adaptations exist, it's undeniable that the 
+      stories themselves have had a significant impact on Western culture. However, seeing how 
+      obviously major releases such as these have been able to influence the popularity of her stories 
+      raises important questions about visual media has been able to supplant reading as the most dominant 
+      and acessible form of entertainment in society.
+
+  </p>
+
+  <hr class="divider" />
+
+
+  <!-- ======================================================
+       OPTIONAL COMPONENTS — uncomment to use
+       ====================================================== -->
+
+  <!-- Highlighted callout box:
+  <div class="callout">
+    <div class="callout-icon">📌</div>
+    <p>A key insight or quote you want to highlight.</p>
+  </div>
+  -->
+
+  <!-- Pull quote / blockquote:
+  <blockquote>
+    <p>"The quote goes here."</p>
+    <cite>— Author, Source</cite>
+  </blockquote>
+  -->
+
+  <!-- ======================================================
+       CONCLUSION
+       ====================================================== -->
+  <div>
+    <p><p>Pride and Prejudice' slow burning romance combined with serious 
+    discussions of class tensions and womens' roles continues to resonate with readers
+    in the modern era, while at the same time having the power to fully immerse the reader 
+    in the distant world of Regency-era England. Based on its exponentially-increasing 
+    popularity, it's safe to say that it will remain a staple of English classic literature 
+    for years to come.</p></p>
+  </div>
+
+
+  <div class="nav-footer">
+    <span></span>
+    <a class="nav-btn primary" href="../index.html">↩ Back to main article</a>
+    <span></span>
+  </div>
+
+</main>
+
+<!-- ↓ Do not remove these — they power the charts -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="../assets/ngram-chart.js"></script>
+</body>
+</html>
