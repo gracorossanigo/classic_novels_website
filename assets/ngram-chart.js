@@ -644,7 +644,7 @@
         const { years, pairs, series } = data;
         const PANEL_H   = 240;
         const PM        = { top: 28, right: 16, bottom: 36, left: 52 };
-        const PAIR_COLORS = ['#2563eb', '#dc2626'];
+        const PAIR_COLORS = ['#3adb1a', '#40160e'];
         const tip = getTip();
 
         const grid = d3.select(container).append('div')
