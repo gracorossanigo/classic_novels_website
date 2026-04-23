@@ -179,7 +179,7 @@ h1 em {
 /* ── WORD CLOUD ── */
 .word-cloud-figure {
   position: absolute;
-  right: -650px;
+  right: -600px;
   top: 42%;
   transform: translateY(-50%);
   width: 700px;
