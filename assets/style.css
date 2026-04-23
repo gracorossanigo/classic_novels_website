@@ -187,6 +187,7 @@ h1 em {
   z-index: 0;
   pointer-events: none;
   margin: 0;
+  padding-left: 75px;
 }
 
 #word-cloud {
