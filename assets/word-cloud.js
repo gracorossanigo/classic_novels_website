@@ -120,7 +120,7 @@
   }
 
   function fillColor(count) {
-    if (count >= 5) return '#3b82f6';
+    if (count >= 5) return '#74a7f8';
     if (count >= 3) return '#60a5fa';
     return '#93c5fd';
   }
