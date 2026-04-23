@@ -32,12 +32,10 @@
   <div class="article-eyebrow">Literary Analysis · Ngram Study</div>
 
   <!-- ↓ Your article / novel title -->
-  <h1>Novel Title</h1>
+  <h1>Brave New World</h1>
 
   <!-- Tags — add or remove <span> elements as needed -->
   <div class="tags-row">
-    <span class="tag">Literature</span>
-    <span class="tag">Ngram</span>
     <!-- <span class="tag">Add more tags here</span> -->
   </div>
 
@@ -48,19 +46,19 @@
   <div class="book-card">
     <div class="book-field">
       <div class="field-label">Author</div>
-      <div class="field-value">Author Name</div>
+      <div class="field-value">Aldous Huxley</div>
     </div>
     <div class="book-field">
       <div class="field-label">Published</div>
-      <div class="field-value">Year</div>
+      <div class="field-value">1932</div>
     </div>
     <div class="book-field">
       <div class="field-label">Original Language</div>
-      <div class="field-value">Language</div>
+      <div class="field-value">English</div>
     </div>
     <div class="book-field">
       <div class="field-label">Genre</div>
-      <div class="field-value">Genre · Subgenre</div>
+      <div class="field-value">Dystopian</div>
     </div>
   </div>
 
@@ -90,9 +88,20 @@
 
   <!-- CHART 1: per-language frequencies -->
   <figure class="figure">
-    <div data-chart="separate" data-src="./data/FOLDER/FILENAME.json"></div>
+    <div data-chart="separate" data-src="./data/brave-new-world/brave-new-world.json"></div>
     <figcaption>Fig. 1 — Description of this chart.</figcaption>
   </figure>
+
+  <p>The English corpus maintains the highest frequency of mentions of Brave New World, showing a steady climb 
+    after publication that 
+    accelerates during the Cold War and the "Brave New World Revisited" (a follow-up novel published 
+    by Huxley) era. Interestingly, the Italian 
+    corpus shows a significant early peak in the 1940s and remains highly engaged with the text. The 
+    Russian corpus remains at zero for decades, only appearing after the fall of the Soviet Union, which 
+    aligns with the lifting of censorship on Western dystopian literature. All languages show a collective 
+    upward trend into the 21st century, reflecting the book's renewed relevance in the age of biotechnology 
+    and technologically-equipped authoritarianism -- elements of the modern world which Huxley was truly prophetic 
+    in predicting.</p>
 
 
   <!-- ======================================================
@@ -101,30 +110,62 @@
        ====================================================== -->
 
   <div>
-    <h2 class="section-heading">Section Title</h2>
-    <p>Write your section text here.</p>
 
     <!-- CHART 2: aggregated cross-language index (same JSON as Chart 1) -->
     <figure class="figure">
-      <div data-chart="aggregate" data-src="./data/FOLDER/FILENAME.json"></div>
+      <div data-chart="aggregate" data-src="./data/brave-new-world/brave-new-world.json"></div>
       <figcaption>Fig. 2 — Description of this chart.</figcaption>
     </figure>
+
+    <p>While there is a notable plateau in Brave New World's popularity during the mid-20th century, the surge 
+        beginning in the 1980s aligns 
+        with the Reagan/Thatcher era’s shift toward neoliberalism and deregulation, marking a transition from 
+        "Orwellian" fears of state surveillance to a "Huxleyan" reality defined by hyper-consumerism and the 
+        prioritizing of market stability over individual agency. This upward trend, continuing through the 2020 
+        Peacock TV series adaptation, highlights how the novel has transitioned from a specific mid-century 
+        warning to a permanent fixture of global cultural discourse. Ultimately, the 21st century peak is the highest 
+        in the book's history, suggesting its dystopian vision of the future is currently viewed as more prophetic than ever.
+</p>
+
   </div>
 
   <hr class="divider" />
 
   <div>
-    <h2 class="section-heading">Another Section Title</h2>
-    <p>Write your section text here.</p>
+    <h2 class="section-heading">Popularity Compared to Huxley's Other Works</h2>
 
     <!-- CHART 3: comparison with other novels -->
     <figure class="figure">
-      <div data-chart="comparison" data-src="./data/FOLDER/FILENAME-comparison.json"></div>
+      <div data-chart="comparison" data-src="./data/brave-new-world/huxley-works.json"></div>
       <figcaption>Fig. 3 — Description of this chart.</figcaption>
     </figure>
+
+    <p>This graph reveals the popularity of novels written by Aldous Huxley: Crome Yellow, Point Counter Point, 
+        Brave New World, and Eyeless in Gaza, showing the absolute dominance of Brave New World within Huxley's 
+        body of work. While Point Counter Point and Eyeless in Gaza enjoyed moderate attention in the decade following 
+        their release, they have since receded to a low baseline. Brave New World broke away from his other works in 
+        the late 1930s and has continued to grow in popularity ever since. </p>
+
   </div>
 
   <hr class="divider" />
+
+      <!-- CHART 3: comparison with other novels -->
+    <figure class="figure">
+      <div data-chart="comparison" data-src="./data/brave-new-world/dystopian-classics.json"></div>
+      <figcaption>Fig. 3 — Description of this chart.</figcaption>
+    </figure>
+
+    <p>This visualization highlights the unique cultural trajectory of Brave New World relative to other mid-century 
+        dystopian classics, illustrating its transition from a period-specific critique to a universal modern 
+        archetype. While Fahrenheit 451 and Lord of the Flies maintain consistent presence as academic staples, 
+        Huxley’s 1932 novel exhibits a distinct exponential growth that accelerates significantly after the 1990s. 
+        The data suggests that while Lord of the Flies experienced a sharp bimodal peak corresponding to the social 
+        upheavals of the 1960s, it eventually leveled off; meanwhile, Brave New World continued to gain momentum, 
+        likely as society began to mirror Huxley’s predictions regarding the prevalence of genetic engineering, and 
+        the dangers of consumerism and hedonism. </p>
+
+  </div>
 
 
   <!-- ======================================================
@@ -146,17 +187,10 @@
   -->
 
 
-  <hr class="divider" />
-
   <!-- ======================================================
        CONCLUSION
        ====================================================== -->
-  <div>
-    <h2 class="section-heading">Conclusion</h2>
-    <p>Write your conclusion here.</p>
-  </div>
 
-  <hr class="divider" />
 
   <div class="nav-footer">
     <span></span>
