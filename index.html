@@ -57,12 +57,16 @@
                       ingrained in Western culture? What makes a “classic” different from other novels in 
                       terms of their cultural impact? How do classic novels correlate with, or even influence,
                       other novels to rise in popularity? </p>
-<p>   To try to answer these questions, we compiled a list of around 100 widely agreed upon Western 
-                      classics, and collected data on how mentions of their titles in other written works 
-                      has changed over time. In theory, if their titles are being mentioned at certain points 
-                      in history more so than others, this can act as a measure of how much discussion is 
+<p>   To try to answer these questions, we compiled a list of around 100 widely agreed upon Western
+                      classics, and collected data on how mentions of their titles in other written works
+                      has changed over time. In theory, if their titles are being mentioned at certain points
+                      in history more so than others, this can act as a measure of how much discussion is
                       ocurring surrounding the novel.
 </p>
+
+  <figure class="word-cloud-figure" aria-hidden="true">
+    <div id="word-cloud"></div>
+  </figure>
 
   <hr class="divider" />
 </section>
@@ -382,7 +386,7 @@
 
   <p>If you want to learn more about classics that we didn't include in our case studies,
                     you can explore their popularity graphs using the same dataset we used for this project 
-                    (The Google NGram dataset) <a href="https://books.google.com/ngrams/">here. If you want to make your own graphs such as the ones we have here, feel free to visit the github!</a></p>
+                    (The Google NGram dataset) <a href="https://books.google.com/ngrams/">here. </a>If you want to make your own graphs such as the ones we have here, feel free to visit the <a href="https://github.com/gracorossanigo/classic_novels_website">github!</a></p>
 
 </section>
 
@@ -391,7 +395,9 @@
   <p>Built for GitHub Pages</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-cloud@1/build/d3.layout.cloud.min.js"></script>
 <script src="./assets/ngram-chart.js"></script>
+<script src="./assets/word-cloud.js"></script>
 <script src="./assets/accordion.js"></script>
 </body>
 </html>
